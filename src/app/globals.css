@@ -1,0 +1,261 @@
+/* Design tokens. Change the look of the whole app from here. */
+:root {
+  --bg: #fafaf8;
+  --card: #ffffff;
+  --ink: #141414;
+  --ink-soft: #55554f;
+  --muted: #8a8a84;
+  --line: #e6e5df;
+  --head: #f1f0eb;
+
+  --ok: #2f6b3f;
+  --ok-soft: #e4efe6;
+  --danger: #a8322a;
+  --danger-soft: #f8e2df;
+  --warn-bg: #f7f0e6;
+  --warn-line: #eadfcb;
+  --warn-ink: #7a5320;
+
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --bs-body-bg: var(--bg);
+  --bs-body-color: var(--ink);
+  --bs-body-font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 13px;
+  letter-spacing: -0.005em;
+}
+
+.page {
+  max-width: 1100px;
+  padding: 48px 32px 96px;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Buttons: square, black or outlined. Built on top of Bootstrap's .btn. */
+.btn {
+  border-radius: 0;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 18px;
+}
+
+.btn-ink {
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  color: #fff;
+}
+
+.btn-ink:hover,
+.btn-ink:focus-visible {
+  background: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+.btn-ink:disabled {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+  opacity: 0.55;
+}
+
+.btn-line {
+  background: var(--card);
+  border: 1px solid #d3d2cc;
+  color: var(--ink);
+}
+
+.btn-line:hover,
+.btn-line:focus-visible {
+  background: var(--head);
+  border-color: #b9b8b1;
+  color: var(--ink);
+}
+
+/* Small text actions inside table rows. */
+.link-action {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin-right: 14px;
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: #cfcec7;
+}
+
+.link-action:last-child {
+  margin-right: 0;
+}
+
+.link-action:hover {
+  color: var(--ink);
+  text-decoration-color: var(--ink);
+}
+
+.link-action.danger:hover {
+  color: var(--danger);
+  text-decoration-color: var(--danger);
+}
+
+/* Forms. */
+.field-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.field-input {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--card);
+  border: 1px solid #d3d2cc;
+  border-radius: 0;
+  font: inherit;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.field-input::placeholder {
+  color: #b3b2ab;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--ink);
+}
+
+.field-input:disabled {
+  background: var(--head);
+  color: var(--ink-soft);
+}
+
+.field-input.invalid {
+  border-color: var(--danger);
+}
+
+.field-hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.field-error {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--danger);
+}
+
+.form-error {
+  padding: 10px 14px;
+  background: var(--danger-soft);
+  border: 1px solid #efc4bf;
+  color: var(--danger);
+  font-size: 12px;
+}
+
+/* Cards and tables. */
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+}
+
+.data-table th {
+  background: var(--head);
+  padding: 14px 20px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: 18px 20px;
+  border-top: 1px solid var(--line);
+  vertical-align: middle;
+}
+
+.data-table small {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.sku-chip {
+  display: inline-block;
+  padding: 3px 8px;
+  background: var(--head);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+
+.chip {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--ok-soft);
+  color: var(--ok);
+}
+
+.chip-alert {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.stock-low {
+  color: var(--danger);
+}
+
+.empty-state {
+  padding: 56px 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.empty-state strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 28px 16px 72px;
+  }
+}
