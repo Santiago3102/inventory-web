@@ -1,0 +1,17 @@
+.swatch {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  flex: none;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 600;
+}
+
+.actions {
+  white-space: nowrap;
+}
